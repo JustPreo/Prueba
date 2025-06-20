@@ -41,7 +41,7 @@ public class JTunes {
                 
             //if(code==cancionBusq.getCodigo()){
                 canciones[i]= new Song(code, name, price, portada);
-                System.out.println("Se ha guardado agregado la cancion exitosamente");
+               
                 return true;
             //}
             
@@ -54,7 +54,7 @@ public class JTunes {
         
   
         
-        System.out.println("No se ha agregado la cancion. La Cancion ya existe");
+  
         return false;
         
     }
@@ -76,7 +76,7 @@ public class JTunes {
     }
     
     public Song[] getAllSong(){
-        System.out.println("rETORNANDO CANCIONES ARRAY");
+    
         return canciones;
     }
     
