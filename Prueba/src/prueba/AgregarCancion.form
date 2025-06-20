@@ -39,6 +39,10 @@
                           <Component id="AgregarCancion" alignment="1" min="-2" pref="147" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Component id="regresarButton" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="105" max="32767" attributes="0"/>
           </Group>
@@ -59,7 +63,9 @@
               <Component id="addImage" min="-2" pref="36" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="AgregarCancion" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace pref="67" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="regresarButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -103,6 +109,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AgregarCancionActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="regresarButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Regresar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="regresarButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

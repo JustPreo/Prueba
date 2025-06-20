@@ -48,6 +48,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
         addPrice = new javax.swing.JTextField();
         addImage = new javax.swing.JButton();
         AgregarCancion = new javax.swing.JButton();
+        regresarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +76,13 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
             }
         });
 
+        regresarButton.setText("Regresar");
+        regresarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                regresarButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,7 +99,10 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
                             .addComponent(addCode, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addImage, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AgregarCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(AgregarCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(regresarButton)))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -109,7 +120,9 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
                 .addComponent(addImage, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(AgregarCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(regresarButton)
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -142,6 +155,12 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
             System.out.println("Se guardo exitosamente");
         }
     }//GEN-LAST:event_addImageActionPerformed
+
+    private void regresarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarButtonActionPerformed
+        Menu newMenu = new Menu();
+        newMenu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_regresarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,6 +204,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
     private javax.swing.JTextField addPrice;
     private javax.swing.JTextField addTitle;
     private java.awt.Label label1;
+    private javax.swing.JButton regresarButton;
     // End of variables declaration//GEN-END:variables
 
     @Override
