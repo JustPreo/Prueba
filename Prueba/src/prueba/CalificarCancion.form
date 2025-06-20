@@ -134,7 +134,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="NombreCancionText">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor" postCode="if (cancionActual != null){&#xa;&#xa;CodigoCancionText.setText(cancionActual.getNombre());}&#xa;else &#xa;{">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Nombre cancion"/>
@@ -142,13 +142,16 @@
         </Component>
         <Component class="javax.swing.JLabel" name="CodigoCancionText">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor" postCode="if (cancionActual != null){&#xa;&#xa;CodigoCancionText.setText(cancionActual.getNombre());}">
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor" postCode="if (cancionActual != null){&#xa;&#xa;CodigoCancionText.setText(cancionActual.getCodigo());}&#xa;else &#xa;{">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot;Codigo cancion&quot;" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="}"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
