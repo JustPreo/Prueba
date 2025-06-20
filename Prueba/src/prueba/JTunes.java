@@ -28,14 +28,25 @@ public class JTunes {
         double price= precio;
         ImageIcon portada = imagenDisco;
         
-        int i=0;
+        //Chequeo de existencia de canciones
+        if(canciones.length<1){
+            canciones[0]= new Song(code, name, price, portada);
+            System.out.println("Se ha guardado agregado la cancion exitosamente");
+            return true;
+        }else{
+            
+         int i=0;    
         for(Song cancionBusq: canciones){
-            if(code!=cancionBusq.getCodigo()){
+            if(code==cancionBusq.getCodigo()){
                 canciones[i]= new Song(code, name, price, portada);
                 System.out.println("Se ha guardado agregado la cancion exitosamente");
                 return true;
             }
+           }
         }
+        
+        
+  
         
         System.out.println("No se ha agregado la cancion. La Cancion ya existe");
         return false;

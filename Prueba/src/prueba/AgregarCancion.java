@@ -3,16 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package prueba;
-
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.filechooser.*;
 /**
  *
  * @author David
  */
-public class AgregarCancion extends javax.swing.JFrame {
+public class AgregarCancion extends javax.swing.JFrame implements ActionListener{
 
     /**
      * Creates new form AgregarCancion
      */
+    
+    //Creacion de file chooser
+    private JFileChooser Chooser= new JFileChooser(new File("src\\portadas"));
+    private ImageIcon ImageDisco;
+    private String rutaImagen="";
+    
+    
     public AgregarCancion() {
         initComponents();
     }
@@ -26,21 +38,106 @@ public class AgregarCancion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label1 = new java.awt.Label();
+        addTitle = new javax.swing.JTextField();
+        addCode = new javax.swing.JTextField();
+        addPrice = new javax.swing.JTextField();
+        addImage = new javax.swing.JButton();
+        AgregarCancion = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        label1.setAlignment(java.awt.Label.CENTER);
+        label1.setFont(new java.awt.Font("Dialog", 0, 36)); // NOI18N
+        label1.setText("Agregar Cancion");
+
+        addTitle.setText("Agregar Titulo");
+
+        addCode.setText("Agregar Codigo");
+
+        addPrice.setText("Agregar Precio");
+
+        addImage.setText("Elegir Imagen");
+        addImage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addImageActionPerformed(evt);
+            }
+        });
+
+        AgregarCancion.setText("Agregar Cancion");
+        AgregarCancion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarCancionActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(194, 194, 194)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addCode, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addImage, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AgregarCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(addCode, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(addImage, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(AgregarCancion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AgregarCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarCancionActionPerformed
+        String codigo= addCode.getText();
+        int codeInt= Integer.parseInt(codigo);
+        String titulo= addTitle.getText();
+        String precio = addPrice.getText();
+        double precioInt = Double.parseDouble(precio);
+        ImageDisco = new ImageIcon(rutaImagen);
+        JTunes creadorCancion = new JTunes();
+        creadorCancion.addSong(codeInt, codigo, precioInt, ImageDisco);
+        System.out.println("Se guardo la cancion exitosamente");
+        ImageDisco= null;//buffeo de imagen disco
+        
+        
+    }//GEN-LAST:event_AgregarCancionActionPerformed
+
+    private void addImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addImageActionPerformed
+        File archivoDisco;
+        
+        int seleccionUsuario = Chooser.showSaveDialog(null);
+        //Verificacion de seleccion
+        if(seleccionUsuario == JFileChooser.APPROVE_OPTION){
+            archivoDisco=Chooser.getSelectedFile();
+            rutaImagen= archivoDisco.getAbsolutePath();
+            System.out.println(rutaImagen);
+            System.out.println("Se guardo exitosamente");
+        }
+    }//GEN-LAST:event_addImageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +175,16 @@ public class AgregarCancion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AgregarCancion;
+    private javax.swing.JTextField addCode;
+    private javax.swing.JButton addImage;
+    private javax.swing.JTextField addPrice;
+    private javax.swing.JTextField addTitle;
+    private java.awt.Label label1;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
