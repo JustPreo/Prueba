@@ -16,6 +16,7 @@ public class CalificarCancion extends javax.swing.JFrame {
 
     
     Song cancionActual = null;
+    JTunes jtunes = Menu.
     Song cancionesTotal[] = jtunes.getAllSong();
 
     /**
