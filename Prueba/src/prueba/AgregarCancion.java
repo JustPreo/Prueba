@@ -137,7 +137,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
         ImageDisco = new ImageIcon(rutaImagen);
         //JTunes creadorCancion = new JTunes();
         jtunes.addSong(codeInt, titulo, precioInt, ImageDisco);
-        System.out.println("Se guardo la cancion exitosamente");
+     
         ImageDisco= null;//buffeo de imagen disco
         
         System.out.println(jtunes.searchSong(codeInt).getNombre());
@@ -154,7 +154,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
             archivoDisco=Chooser.getSelectedFile();
             rutaImagen= archivoDisco.getAbsolutePath();
             System.out.println(rutaImagen);
-            System.out.println("Se guardo exitosamente");
+           
         }
     }//GEN-LAST:event_addImageActionPerformed
 
