@@ -9,7 +9,7 @@ package prueba;
  * @author user
  */
 public class Menu extends javax.swing.JFrame {
-    public static JTunes newJTune;
+    public JTunes newJTune;
     
     /**
      * Creates new form Menu
@@ -135,7 +135,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        CalificarCancion calificar = new CalificarCancion();
+        CalificarCancion calificar = new CalificarCancion(newJTune);
         calificar.setLocale(null);
         calificar.setResizable(false);
         calificar.setVisible(true);

@@ -16,15 +16,17 @@ public class CalificarCancion extends javax.swing.JFrame {
 
     
     Song cancionActual = null;
-    JTunes jtunes = Menu.
-    Song cancionesTotal[] = jtunes.getAllSong();
+    JTunes jtunes ;
+    Song cancionesTotal[];
 
     /**
      * Creates new form CalificarCancion
      */
-    public CalificarCancion() {
+    public CalificarCancion(JTunes jtunes) {
         initComponents();
-        //actualizarCanciones();
+        this.jtunes = jtunes;
+        this.cancionesTotal =  jtunes.getAllSong();
+        actualizarCanciones();
 
     }
 
@@ -276,11 +278,7 @@ public class CalificarCancion extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CalificarCancion().setVisible(true);
-            }
-        });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
