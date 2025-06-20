@@ -37,10 +37,12 @@ public class JTunes {
             
          int i=0;    
         for(Song cancionBusq: canciones){
+            if (cancionBusq != null){
             if(code==cancionBusq.getCodigo()){
                 canciones[i]= new Song(code, name, price, portada);
                 System.out.println("Se ha guardado agregado la cancion exitosamente");
                 return true;
+            }
             }
            }
         }

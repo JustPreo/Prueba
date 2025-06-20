@@ -28,6 +28,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
     int i=0;
     public AgregarCancion(JTunes jtunes) {
         initComponents();
+        this.jtunes = jtunes;
         this.actualSongs = jtunes.getAllSong();
         //JTunes cancionesActuales= getAllSong();
     }
