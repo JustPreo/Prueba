@@ -82,14 +82,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         PrecioCancionText.setText("Precio cancion   ");
 
         star1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null)
-        {
-            JOptionPane.showMessageDialog(this, "Ocupa ingresar una cancion primero");
-        }
-        else
-        {
-            cancionActual.addStars(1);
-        }
         star1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star1ActionPerformed(evt);
@@ -97,7 +89,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         });
 
         star2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null) { JOptionPane.showMessageDialog(this, "Ocupa ingresar una cancion primero"); } else  { cancionActual.addStars(1); }
         star2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star2ActionPerformed(evt);
@@ -105,7 +96,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         });
 
         star3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null) { JOptionPane.showMessageDialog(this, "Ocupa ingresar una cancion primero"); } else  { cancionActual.addStars(1); }
         star3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star3ActionPerformed(evt);
@@ -113,7 +103,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         });
 
         star4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null) { JOptionPane.showMessageDialog(this, "Ocupa ingresar una cancion primero"); } else  { cancionActual.addStars(1); }
         star4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star4ActionPerformed(evt);
@@ -121,7 +110,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         });
 
         star5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null) { JOptionPane.showMessageDialog(this, "Ocupa ingresar una cancion primero"); } else  { cancionActual.addStars(1); }
         star5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star5ActionPerformed(evt);

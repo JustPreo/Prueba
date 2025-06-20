@@ -180,9 +180,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="star1ActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if (cancionActual == null)&#xa;{&#xa;JOptionPane.showMessageDialog(this, &quot;Ocupa ingresar una cancion primero&quot;);&#xa;}&#xa;else &#xa;{&#xa;cancionActual.addStars(1);&#xa;}"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="star2">
           <Properties>
@@ -193,9 +190,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="star2ActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if (cancionActual == null) { JOptionPane.showMessageDialog(this, &quot;Ocupa ingresar una cancion primero&quot;); } else  { cancionActual.addStars(1); }"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="star3">
           <Properties>
@@ -206,9 +200,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="star3ActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if (cancionActual == null) { JOptionPane.showMessageDialog(this, &quot;Ocupa ingresar una cancion primero&quot;); } else  { cancionActual.addStars(1); }"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="star4">
           <Properties>
@@ -219,9 +210,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="star4ActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if (cancionActual == null) { JOptionPane.showMessageDialog(this, &quot;Ocupa ingresar una cancion primero&quot;); } else  { cancionActual.addStars(1); }"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="star5">
           <Properties>
@@ -232,9 +220,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="star5ActionPerformed"/>
           </Events>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="if (cancionActual == null) { JOptionPane.showMessageDialog(this, &quot;Ocupa ingresar una cancion primero&quot;); } else  { cancionActual.addStars(1); }"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
