@@ -323,11 +323,12 @@ public class CalificarCancion extends javax.swing.JFrame {
             try {
             String string = code.getText();
             int codigoInt = Integer.parseInt(string);
-            
+                System.out.println(codigoInt);
             if (jtunes.searchSong(codigoInt)!= null)
             {
             Song cancion = jtunes.searchSong(codigoInt);
             cancionActual = cancion;
+                System.out.println("ENTRO AQUIII");
             
             }
             
@@ -337,6 +338,7 @@ public class CalificarCancion extends javax.swing.JFrame {
             {
             JOptionPane.showMessageDialog(this, "Ingrese numeros");
             }
+            
             
         //if (jtunes.searchSong())
         }

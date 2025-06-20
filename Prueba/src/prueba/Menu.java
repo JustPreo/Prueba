@@ -10,6 +10,7 @@ package prueba;
  */
 public class Menu extends javax.swing.JFrame {
     public JTunes newJTune;
+    Song cancionesTotal[];
     
     /**
      * Creates new form Menu
@@ -17,8 +18,16 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         
         initComponents();
-
         newJTune= new JTunes();
+        this.cancionesTotal = newJTune.getAllSong();
+        for(Song cancionBusq: cancionesTotal){
+            if (cancionBusq != null){
+                System.out.println(cancionBusq.getNombre());
+            }
+            System.out.println("A");
+            
+            }
+            
 
     }
 

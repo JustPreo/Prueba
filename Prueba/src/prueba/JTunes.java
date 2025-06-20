@@ -29,23 +29,27 @@ public class JTunes {
         ImageIcon portada = imagenDisco;
         
         //Chequeo de existencia de canciones
-        if(canciones.length<1){
+        /*if(canciones.length<1){
             canciones[0]= new Song(code, name, price, portada);
             System.out.println("Se ha guardado agregado la cancion exitosamente");
             return true;
-        }else{
-            
-         int i=0;    
+        }*/
+            int i = 0;
+         System.out.println("Paso 1"); 
         for(Song cancionBusq: canciones){
-            if (cancionBusq != null){
-            if(code==cancionBusq.getCodigo()){
+            if (cancionBusq == null){
+                
+            //if(code==cancionBusq.getCodigo()){
                 canciones[i]= new Song(code, name, price, portada);
                 System.out.println("Se ha guardado agregado la cancion exitosamente");
                 return true;
+            //}
+            
             }
-            }
+            
+            i++;
            }
-        }
+        
         
         
   
@@ -72,6 +76,7 @@ public class JTunes {
     }
     
     public Song[] getAllSong(){
+        System.out.println("rETORNANDO CANCIONES ARRAY");
         return canciones;
     }
     
