@@ -31,21 +31,7 @@ public class CalificarCancion extends javax.swing.JFrame {
 
     }
 
-    public void actualizarCanciones() {
-        DefaultTableModel modelo = (DefaultTableModel) jTable1.getModel();
-        modelo.setRowCount(0);
-
-        for (int i = 0; i < cancionesTotal.length;i++) {
-            {
-            if (cancionesTotal[i] != null)
-            {
-            
-            }
-                System.out.println("A");
-            }
-            
-        }
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -68,7 +54,7 @@ public class CalificarCancion extends javax.swing.JFrame {
         star4 = new javax.swing.JButton();
         star5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        Code = new javax.swing.JTextField();
+        code = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -76,299 +62,283 @@ public class CalificarCancion extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         NombreCancionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NombreCancionText.setText("Nombre cancion");
+
+        CodigoCancionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         if (cancionActual != null){
 
-            CodigoCancionText.setText(cancionActual.getNombre());}
+            CodigoCancionText.setText(""+cancionActual.getCodigo());}
+        CodigoCancionText.setText("Codigo cancion");
+
+        jLabel3.setText("IMAGEN");
+
+        RatingCancionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        RatingCancionText.setText("Rating cancion   ");
+
+        PrecioCancionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        PrecioCancionText.setText("Precio cancion   ");
+
+        star1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
+        if (cancionActual == null)
+        {
+            star1.setEnabled(false);
+        }
         else
         {
-            NombreCancionText.setText("Nombre cancion");
-
-            CodigoCancionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-            if (cancionActual != null){
-
-                CodigoCancionText.setText(cancionActual.getCodigo());}
-            else
-            {
-                CodigoCancionText.setText("Codigo cancion");
+            star1.setEnabled(true);
+        }
+        star1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                star1ActionPerformed(evt);
             }
+        });
 
-            jLabel3.setText("IMAGEN");
-
-            RatingCancionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-            RatingCancionText.setText("Rating cancion   ");
-
-            PrecioCancionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-            PrecioCancionText.setText("Precio cancion   ");
-
-            star1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-            if (cancionActual == null)
-            {
-                star1.setEnabled(false);
+        star2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
+        if (cancionActual == null)
+        {
+            star2.setEnabled(false);
+        }
+        else
+        {
+            star2.setEnabled(true);
+        }
+        star2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                star2ActionPerformed(evt);
             }
-            else
-            {
-                star1.setEnabled(true);
+        });
+
+        star3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
+        if (cancionActual == null)
+        {
+            star3.setEnabled(false);
+        }
+        else
+        {
+            star3.setEnabled(true);
+        }
+        star3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                star3ActionPerformed(evt);
             }
-            star1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    star1ActionPerformed(evt);
-                }
-            });
+        });
 
-            star2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-            if (cancionActual == null)
-            {
-                star2.setEnabled(false);
+        star4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
+        if (cancionActual == null)
+        {
+            star4.setEnabled(false);
+        }
+        else
+        {
+            star4.setEnabled(true);
+        }
+        star4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                star4ActionPerformed(evt);
             }
-            else
-            {
-                star2.setEnabled(true);
+        });
+
+        star5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
+        if (cancionActual == null)
+        {
+            star5.setEnabled(false);
+        }
+        else
+        {
+            star5.setEnabled(true);
+        }
+        star5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                star5ActionPerformed(evt);
             }
-            star2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    star2ActionPerformed(evt);
-                }
-            });
+        });
 
-            star3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-            if (cancionActual == null)
-            {
-                star3.setEnabled(false);
+        jLabel1.setText("Codigo de la cancion:");
+
+        code.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                codeActionPerformed(evt);
             }
-            else
-            {
-                star3.setEnabled(true);
+        });
+
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
             }
-            star3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    star3ActionPerformed(evt);
-                }
-            });
+        });
 
-            star4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-            if (cancionActual == null)
-            {
-                star4.setEnabled(false);
-            }
-            else
-            {
-                star4.setEnabled(true);
-            }
-            star4.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    star4ActionPerformed(evt);
-                }
-            });
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CodigoCancionText, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NombreCancionText, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RatingCancionText, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PrecioCancionText, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(333, 333, 333)
+                .addComponent(star1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(star2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(star3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(star4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(star5)
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CodigoCancionText)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(NombreCancionText)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(RatingCancionText)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(PrecioCancionText))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(star1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(star2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(star3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(star5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(star4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(174, Short.MAX_VALUE))
+        );
 
-            star5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-            if (cancionActual == null)
-            {
-                star5.setEnabled(false);
-            }
-            else
-            {
-                star5.setEnabled(true);
-            }
-            star5.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    star5ActionPerformed(evt);
-                }
-            });
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
-            jLabel1.setText("Codigo de la cancion:");
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
 
-            Code.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    CodeActionPerformed(evt);
-                }
-            });
-
-            jButton1.setText("Elegir cancion");
-            jButton1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton1ActionPerformed(evt);
-                }
-            });
-
-            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-            jPanel1.setLayout(jPanel1Layout);
-            jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(21, 21, 21)
-                                    .addComponent(Code, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jButton1)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(72, 72, 72)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(CodigoCancionText, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(NombreCancionText, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(RatingCancionText, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(PrecioCancionText, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(37, 37, 37))
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(333, 333, 333)
-                    .addComponent(star1)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(star2)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(star3)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(star4)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                    .addComponent(star5)
-                    .addContainerGap(104, Short.MAX_VALUE))
-            );
-            jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(CodigoCancionText)
-                                .addComponent(jLabel1))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(NombreCancionText)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(RatingCancionText)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(PrecioCancionText))
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(30, 30, 30)
-                            .addComponent(Code, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton1)))
-                    .addGap(18, 18, 18)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(star1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(star2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(star3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(star5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(star4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(174, Short.MAX_VALUE))
-            );
-
-            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-            getContentPane().setLayout(layout);
-            layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            );
-            layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            );
-
-            pack();
-        }// </editor-fold>//GEN-END:initComponents
-
-    private void star1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star1ActionPerformed
-        // TODO add your handling code here:
+    private void codeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codeActionPerformed
+    
         
-        if (cancionActual != null){
-            
-            cancionActual.addStars(1);
-            JOptionPane.showMessageDialog(this, "Calificacion agregada (1 Estrella)");
-        }
-        else 
-        {
-            System.out.println("NULL");
-        }
-    }//GEN-LAST:event_star1ActionPerformed
-
-    private void star2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star2ActionPerformed
-        // TODO add your handling code here:
-        if (cancionActual != null){
-            
-            cancionActual.addStars(2);
-            JOptionPane.showMessageDialog(this, "Calificacion agregada (2 Estrellas)");
-        }
-        else 
-        {
-            System.out.println("NULL");
-        }
-        
-    }//GEN-LAST:event_star2ActionPerformed
-
-    private void star3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star3ActionPerformed
-        // TODO add your handling code here:
-        if (cancionActual != null){
-            
-            cancionActual.addStars(3);
-            JOptionPane.showMessageDialog(this, "Calificacion agregada (3 Estrellas)");
-        }
-        else 
-        {
-            System.out.println("NULL");
-        }
-    }//GEN-LAST:event_star3ActionPerformed
-
-    private void star4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star4ActionPerformed
-        // TODO add your handling code here:
-        if (cancionActual != null){
-            
-            cancionActual.addStars(4);
-            JOptionPane.showMessageDialog(this, "Calificacion agregada (4 Estrellas)");
-        }
-        else 
-        {
-            System.out.println("NULL");
-        }
-    }//GEN-LAST:event_star4ActionPerformed
+    }//GEN-LAST:event_codeActionPerformed
 
     private void star5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star5ActionPerformed
         // TODO add your handling code here:
         if (cancionActual != null){
-            
+
             cancionActual.addStars(5);
             JOptionPane.showMessageDialog(this, "Calificacion agregada (5 Estrellas)");
         }
-        else 
+        else
         {
             System.out.println("NULL");
         }
     }//GEN-LAST:event_star5ActionPerformed
 
-    private void CodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CodeActionPerformed
+    private void star4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star4ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CodeActionPerformed
+        if (cancionActual != null){
+
+            cancionActual.addStars(4);
+            JOptionPane.showMessageDialog(this, "Calificacion agregada (4 Estrellas)");
+        }
+        else
+        {
+            System.out.println("NULL");
+        }
+    }//GEN-LAST:event_star4ActionPerformed
+
+    private void star3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star3ActionPerformed
+        // TODO add your handling code here:
+        if (cancionActual != null){
+
+            cancionActual.addStars(3);
+            JOptionPane.showMessageDialog(this, "Calificacion agregada (3 Estrellas)");
+        }
+        else
+        {
+            System.out.println("NULL");
+        }
+    }//GEN-LAST:event_star3ActionPerformed
+
+    private void star2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star2ActionPerformed
+        // TODO add your handling code here:
+        if (cancionActual != null){
+
+            cancionActual.addStars(2);
+            JOptionPane.showMessageDialog(this, "Calificacion agregada (2 Estrellas)");
+        }
+        else
+        {
+            System.out.println("NULL");
+        }
+
+    }//GEN-LAST:event_star2ActionPerformed
+
+    private void star1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star1ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_star1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String codigoIngresado = Code.getText();
-        try {
+        if (cancionActual == null)
+        {
+            System.out.println("Entro");
+            try {
+            String string = code.getText();
+            int codigoInt = Integer.parseInt(string);
             
-            int codigo = Integer.parseInt(codigoIngresado);
-            System.out.println();
-        if (jtunes.searchSong(codigo) != null)
-        {
-        cancionActual = jtunes.searchSong(codigo);
-        }
-        else 
-        {
-        JOptionPane.showMessageDialog(this, "No existe esa cancion");
-        }
-        
-        
-        }
-        catch (Exception e)
-        {
-        JOptionPane.showMessageDialog(this, "Ingrese un numero");
+            if (jtunes.searchSong(codigoInt)!= null)
+            {
+            Song cancion = jtunes.searchSong(codigoInt);
+            cancionActual = cancion;
+            
+            }
+            
+            
+            }
+            catch (Exception e)
+            {
+            JOptionPane.showMessageDialog(this, "Ingrese numeros");
+            }
+            
+        //if (jtunes.searchSong())
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -405,11 +375,11 @@ public class CalificarCancion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Code;
     private javax.swing.JLabel CodigoCancionText;
     private javax.swing.JLabel NombreCancionText;
     private javax.swing.JLabel PrecioCancionText;
     private javax.swing.JLabel RatingCancionText;
+    private javax.swing.JTextField code;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

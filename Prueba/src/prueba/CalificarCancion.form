@@ -51,15 +51,10 @@
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                                  <Component id="Code" min="-2" pref="71" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="code" min="-2" pref="71" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel3" min="-2" pref="160" max="-2" attributes="0"/>
@@ -113,7 +108,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="Code" min="-2" max="-2" attributes="0"/>
+                          <Component id="code" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -134,7 +129,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="NombreCancionText">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor" postCode="if (cancionActual != null){&#xa;&#xa;CodigoCancionText.setText(cancionActual.getNombre());}&#xa;else &#xa;{">
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Nombre cancion"/>
@@ -142,16 +137,13 @@
         </Component>
         <Component class="javax.swing.JLabel" name="CodigoCancionText">
           <Properties>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor" postCode="if (cancionActual != null){&#xa;&#xa;CodigoCancionText.setText(cancionActual.getCodigo());}&#xa;else &#xa;{">
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor" postCode="if (cancionActual != null){&#xa;&#xa;CodigoCancionText.setText(&quot;&quot;+cancionActual.getCodigo());}">
               <Font name="Segoe UI" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
               <Connection code="&quot;Codigo cancion&quot;" type="code"/>
             </Property>
           </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="}"/>
-          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -244,14 +236,14 @@
             <Property name="text" type="java.lang.String" value="Codigo de la cancion:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="Code">
+        <Component class="javax.swing.JTextField" name="code">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CodeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="codeActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Elegir cancion"/>
+            <Property name="text" type="java.lang.String" value="jButton1"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
