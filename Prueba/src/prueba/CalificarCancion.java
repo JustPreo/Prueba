@@ -4,7 +4,9 @@
  */
 package prueba;
 
+import java.awt.Image;
 import java.util.InputMismatchException;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -56,6 +58,7 @@ public class CalificarCancion extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         code = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -79,14 +82,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         PrecioCancionText.setText("Precio cancion   ");
 
         star1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null)
-        {
-            star1.setEnabled(false);
-        }
-        else
-        {
-            star1.setEnabled(true);
-        }
         star1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star1ActionPerformed(evt);
@@ -94,14 +89,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         });
 
         star2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null)
-        {
-            star2.setEnabled(false);
-        }
-        else
-        {
-            star2.setEnabled(true);
-        }
         star2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star2ActionPerformed(evt);
@@ -109,14 +96,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         });
 
         star3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null)
-        {
-            star3.setEnabled(false);
-        }
-        else
-        {
-            star3.setEnabled(true);
-        }
         star3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star3ActionPerformed(evt);
@@ -124,14 +103,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         });
 
         star4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null)
-        {
-            star4.setEnabled(false);
-        }
-        else
-        {
-            star4.setEnabled(true);
-        }
         star4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star4ActionPerformed(evt);
@@ -139,14 +110,6 @@ public class CalificarCancion extends javax.swing.JFrame {
         });
 
         star5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prueba/R__1___1_-removebg-preview.png"))); // NOI18N
-        if (cancionActual == null)
-        {
-            star5.setEnabled(false);
-        }
-        else
-        {
-            star5.setEnabled(true);
-        }
         star5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 star5ActionPerformed(evt);
@@ -165,6 +128,13 @@ public class CalificarCancion extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
             }
         });
 
@@ -193,41 +163,43 @@ public class CalificarCancion extends javax.swing.JFrame {
                     .addComponent(PrecioCancionText, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(333, 333, 333)
-                .addComponent(star1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(star2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(star3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(star4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(star5)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(333, 333, 333)
+                        .addComponent(star1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(star2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(star3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(star4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(star5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jButton2)))
                 .addContainerGap(104, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(CodigoCancionText)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(CodigoCancionText)
-                            .addComponent(jLabel1))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(NombreCancionText)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(RatingCancionText)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(PrecioCancionText))
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
                         .addComponent(code, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                        .addGap(5, 5, 5)
+                        .addComponent(jButton1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(NombreCancionText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RatingCancionText)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(PrecioCancionText))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(star1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -235,7 +207,9 @@ public class CalificarCancion extends javax.swing.JFrame {
                     .addComponent(star3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(star5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(star4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addGap(68, 68, 68))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -263,6 +237,9 @@ public class CalificarCancion extends javax.swing.JFrame {
 
             cancionActual.addStars(5);
             JOptionPane.showMessageDialog(this, "Calificacion agregada (5 Estrellas)");
+            Menu newMenu = new Menu(jtunes);
+        newMenu.setVisible(true);
+        this.dispose();
         }
         else
         {
@@ -276,6 +253,9 @@ public class CalificarCancion extends javax.swing.JFrame {
 
             cancionActual.addStars(4);
             JOptionPane.showMessageDialog(this, "Calificacion agregada (4 Estrellas)");
+            Menu newMenu = new Menu(jtunes);
+        newMenu.setVisible(true);
+        this.dispose();
         }
         else
         {
@@ -289,6 +269,9 @@ public class CalificarCancion extends javax.swing.JFrame {
 
             cancionActual.addStars(3);
             JOptionPane.showMessageDialog(this, "Calificacion agregada (3 Estrellas)");
+            Menu newMenu = new Menu(jtunes);
+        newMenu.setVisible(true);
+        this.dispose();
         }
         else
         {
@@ -302,6 +285,9 @@ public class CalificarCancion extends javax.swing.JFrame {
 
             cancionActual.addStars(2);
             JOptionPane.showMessageDialog(this, "Calificacion agregada (2 Estrellas)");
+            Menu newMenu = new Menu(jtunes);
+        newMenu.setVisible(true);
+        this.dispose();
         }
         else
         {
@@ -312,6 +298,21 @@ public class CalificarCancion extends javax.swing.JFrame {
 
     private void star1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star1ActionPerformed
         // TODO add your handling code here:
+        // TODO add your handling code here:
+        if (cancionActual != null){
+
+            cancionActual.addStars(1);
+            JOptionPane.showMessageDialog(this, "Calificacion agregada (1 Estrellas)");
+            Menu newMenu = new Menu(jtunes);
+        newMenu.setVisible(true);
+        this.dispose();
+        }
+        else
+        {
+            System.out.println("NULL");
+        }
+        
+        
 
     }//GEN-LAST:event_star1ActionPerformed
 
@@ -329,6 +330,15 @@ public class CalificarCancion extends javax.swing.JFrame {
             Song cancion = jtunes.searchSong(codigoInt);
             cancionActual = cancion;
                 System.out.println("ENTRO AQUIII");
+                
+                CodigoCancionText.setText(""+cancionActual.getCodigo());
+                NombreCancionText.setText(cancionActual.getNombre());
+                RatingCancionText.setText(""+cancionActual.songRating());
+                jLabel3.setIcon(cancionActual.getImage());
+                
+                
+                
+                
             
             }
             
@@ -344,6 +354,13 @@ public class CalificarCancion extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Menu newMenu = new Menu(jtunes);
+        newMenu.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,6 +400,7 @@ public class CalificarCancion extends javax.swing.JFrame {
     private javax.swing.JLabel RatingCancionText;
     private javax.swing.JTextField code;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
