@@ -24,7 +24,7 @@ public class Song {
         this.nombre = nombre;
         this.precio = precio;
         this.imagenDisco = imagenDisco;
-        this.sumaEstrellas = 0;
+        this.totalReviews = 0;
         this.sumaEstrellas = 0;
     }
     
@@ -46,6 +46,28 @@ public class Song {
     public ImageIcon getImage()
     {
     return this.imagenDisco;
+    }
+    
+    public boolean addStars(int stars)
+    {
+    if (stars >=0 && stars <= 5)
+    {
+    this.sumaEstrellas += stars;
+    this.totalReviews ++;
+    return true;
+    }
+        return false;
+        
+    }
+    
+    public int songRating()
+    {
+      if (totalReviews > 0)
+      {
+      return (sumaEstrellas/totalReviews);
+      }
+      return 0;
+    
     }
     
 
