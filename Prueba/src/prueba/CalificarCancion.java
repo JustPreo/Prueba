@@ -4,6 +4,8 @@
  */
 package prueba;
 
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -12,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class CalificarCancion extends javax.swing.JFrame {
 
-    JTunes jtunes = new JTunes();
+    
     Song cancionActual = null;
     Song cancionesTotal[] = jtunes.getAllSong();
 
@@ -21,7 +23,7 @@ public class CalificarCancion extends javax.swing.JFrame {
      */
     public CalificarCancion() {
         initComponents();
-        actualizarCanciones();
+        //actualizarCanciones();
 
     }
 
@@ -65,6 +67,8 @@ public class CalificarCancion extends javax.swing.JFrame {
         star5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         NombreCancionText.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         NombreCancionText.setText("Nombre cancion");
@@ -215,6 +219,16 @@ public class CalificarCancion extends javax.swing.JFrame {
 
     private void star1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star1ActionPerformed
         // TODO add your handling code here:
+        
+        if (cancionActual != null){
+            
+            cancionActual.addStars(1);
+            JOptionPane.showMessageDialog(this, "Calificacion agregada (1 Estrella)");
+        }
+        else 
+        {
+            System.out.println("A");
+        }
     }//GEN-LAST:event_star1ActionPerformed
 
     private void star2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_star2ActionPerformed
