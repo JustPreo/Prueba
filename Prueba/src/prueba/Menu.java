@@ -24,7 +24,7 @@ public class Menu extends javax.swing.JFrame {
             if (cancionBusq != null){
                 System.out.println(cancionBusq.getNombre());
             }
-            System.out.println("A");
+
             
             }
             
