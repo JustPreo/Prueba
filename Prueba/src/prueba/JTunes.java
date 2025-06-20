@@ -5,6 +5,7 @@
 package prueba;
 
 import javax.swing.ImageIcon;
+import java.util.Scanner;
 
 /**
  *
@@ -17,20 +18,47 @@ public class JTunes {
         canciones= new Song[10];
     }
     
-    public void addSong(int codigo, String nombre, double precio, ImageIcon imagenDisco){
+    public boolean addSong(int codigo, String nombre, double precio, ImageIcon imagenDisco){
+        Scanner lea = new Scanner(System.in);
+        lea.useDelimiter("\n");
+
+        //Busqueda de cancion con codigo
+        int code=codigo;
+        String name= nombre;
+        double price= precio;
+        ImageIcon portada = imagenDisco;
         
+        int i=0;
+        for(Song cancionBusq: canciones){
+            if(code!=cancionBusq.getCodigo()){
+                canciones[i]= new Song(code, name, price, portada);
+                System.out.println("Se ha guardado agregado la cancion exitosamente");
+                return true;
+            }
+        }
+        
+        System.out.println("No se ha agregado la cancion. La Cancion ya existe");
+        return false;
         
     }
     
     public Song searchSong(int codigo){
+        for(Song cancionBusq: canciones){
+           if(codigo==cancionBusq.getCodigo()){
+               return cancionBusq;
+           }
+        }
         return null;
     }
     
-    public int rateSong(int codigo, int stars){
-        return 0;
+    public void rateSong(int codigo, int stars){
+        Song cancionEncontrada = searchSong(codigo);
+        cancionEncontrada.addStars(stars);
     }
     
-    
+    public Song[] getAllSong(){
+        return canciones;
+    }
     
     
     
