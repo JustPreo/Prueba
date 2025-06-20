@@ -4,6 +4,8 @@
  */
 package prueba;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author David
@@ -12,13 +14,23 @@ public class JTunes {
     private Song canciones[];
     
     public JTunes(){
-        Song= new Song[10];
+        canciones= new Song[10];
     }
     
     public void addSong(int codigo, String nombre, double precio, ImageIcon imagenDisco){
         
         
     }
+    
+    public Song searchSong(int codigo){
+        return null;
+    }
+    
+    public int rateSong(int codigo, int stars){
+        return 0;
+    }
+    
+    
     
     
     
