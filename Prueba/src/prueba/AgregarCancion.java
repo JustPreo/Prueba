@@ -30,7 +30,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
         initComponents();
         this.jtunes = jtunes;
         this.actualSongs = jtunes.getAllSong();
-        //JTunes cancionesActuales= getAllSong();
+        //JTunes cancionesActuales= getAllSong();s
     }
 
     /**
@@ -136,9 +136,11 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
         double precioInt = Double.parseDouble(precio);
         ImageDisco = new ImageIcon(rutaImagen);
         //JTunes creadorCancion = new JTunes();
-        jtunes.addSong(codeInt, codigo, precioInt, ImageDisco);
+        jtunes.addSong(codeInt, titulo, precioInt, ImageDisco);
         System.out.println("Se guardo la cancion exitosamente");
         ImageDisco= null;//buffeo de imagen disco
+        
+        System.out.println(jtunes.searchSong(codeInt).getNombre());
         
         
     }//GEN-LAST:event_AgregarCancionActionPerformed
@@ -157,7 +159,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
     }//GEN-LAST:event_addImageActionPerformed
 
     private void regresarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_regresarButtonActionPerformed
-        Menu newMenu = new Menu();
+        Menu newMenu = new Menu(jtunes);
         newMenu.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_regresarButtonActionPerformed

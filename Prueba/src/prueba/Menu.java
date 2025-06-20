@@ -15,10 +15,10 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public Menu(JTunes newJTune) {
         
         initComponents();
-        newJTune= new JTunes();
+        this.newJTune = newJTune;
         this.cancionesTotal = newJTune.getAllSong();
         for(Song cancionBusq: cancionesTotal){
             if (cancionBusq != null){
