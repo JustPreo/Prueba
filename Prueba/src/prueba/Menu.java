@@ -9,7 +9,8 @@ package prueba;
  * @author user
  */
 public class Menu extends javax.swing.JFrame {
-
+    public static JTunes newJTune;
+    
     /**
      * Creates new form Menu
      */
@@ -17,7 +18,7 @@ public class Menu extends javax.swing.JFrame {
         
         initComponents();
 
-        JTunes nuevoJTUNE= new JTunes();
+        newJTune= new JTunes();
 
     }
 

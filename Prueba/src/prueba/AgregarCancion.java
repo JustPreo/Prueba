@@ -23,7 +23,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
     private JFileChooser Chooser= new JFileChooser(new File("src\\portadas"));
     private ImageIcon ImageDisco;
     private String rutaImagen="";
-    //private JTunes cancionesActuales;
+    private JTunes cancionesActuales= Menu.newJTune;
     
     
     public AgregarCancion() {
