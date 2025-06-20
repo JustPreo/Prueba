@@ -30,8 +30,24 @@ public class Song {
     
     public int getCodigo()
     {
-    
+    return this.codigo;
     }
+    
+    public String getNombre()
+    {
+    return this.nombre;
+    }
+    
+    public double getPrecio()
+    {
+    return this.precio;
+    }
+    
+    public ImageIcon getImage()
+    {
+    return this.imagenDisco;
+    }
+    
 
     
 
