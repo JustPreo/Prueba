@@ -26,8 +26,11 @@ public class Song {
         this.imagenDisco = imagenDisco;
         this.sumaEstrellas = 0;
         this.sumaEstrellas = 0;
-        
-
+    }
+    
+    public int getCodigo()
+    {
+    
     }
 
     
