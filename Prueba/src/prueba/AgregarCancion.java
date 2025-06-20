@@ -23,11 +23,12 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
     private JFileChooser Chooser= new JFileChooser(new File("src\\portadas"));
     private ImageIcon ImageDisco;
     private String rutaImagen="";
-    private JTunes cancionesActuales= Menu.newJTune;
-    
-    
-    public AgregarCancion() {
+    JTunes jtunes;
+    Song actualSongs[];
+    int i=0;
+    public AgregarCancion(JTunes jtunes) {
         initComponents();
+        this.actualSongs = jtunes.getAllSong();
         //JTunes cancionesActuales= getAllSong();
     }
 
@@ -121,7 +122,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
         double precioInt = Double.parseDouble(precio);
         ImageDisco = new ImageIcon(rutaImagen);
         //JTunes creadorCancion = new JTunes();
-        //cancionesActuales.addSong(codeInt, codigo, precioInt, ImageDisco);
+        jtunes.addSong(codeInt, codigo, precioInt, ImageDisco);
         System.out.println("Se guardo la cancion exitosamente");
         ImageDisco= null;//buffeo de imagen disco
         
@@ -171,7 +172,7 @@ public class AgregarCancion extends javax.swing.JFrame implements ActionListener
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AgregarCancion().setVisible(true);
+                
             }
         });
     }

@@ -126,7 +126,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        AgregarCancion agregar = new AgregarCancion();
+        AgregarCancion agregar = new AgregarCancion(newJTune);
         agregar.setLocale(null);
         agregar.setResizable(false);
         agregar.setVisible(true);
