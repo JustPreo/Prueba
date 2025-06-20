@@ -243,7 +243,7 @@ public class CalificarCancion extends javax.swing.JFrame {
         }
         else
         {
-            System.out.println("NULL");
+            
         }
     }//GEN-LAST:event_star5ActionPerformed
 
@@ -259,7 +259,7 @@ public class CalificarCancion extends javax.swing.JFrame {
         }
         else
         {
-            System.out.println("NULL");
+           
         }
     }//GEN-LAST:event_star4ActionPerformed
 
@@ -275,7 +275,7 @@ public class CalificarCancion extends javax.swing.JFrame {
         }
         else
         {
-            System.out.println("NULL");
+           
         }
     }//GEN-LAST:event_star3ActionPerformed
 
@@ -291,7 +291,7 @@ public class CalificarCancion extends javax.swing.JFrame {
         }
         else
         {
-            System.out.println("NULL");
+           
         }
 
     }//GEN-LAST:event_star2ActionPerformed
@@ -309,7 +309,7 @@ public class CalificarCancion extends javax.swing.JFrame {
         }
         else
         {
-            System.out.println("NULL");
+            
         }
         
         
@@ -320,16 +320,16 @@ public class CalificarCancion extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (cancionActual == null)
         {
-            System.out.println("Entro");
+            
             try {
             String string = code.getText();
             int codigoInt = Integer.parseInt(string);
-                System.out.println(codigoInt);
+               
             if (jtunes.searchSong(codigoInt)!= null)
             {
             Song cancion = jtunes.searchSong(codigoInt);
             cancionActual = cancion;
-                System.out.println("ENTRO AQUIII");
+               
                 
                 CodigoCancionText.setText(""+cancionActual.getCodigo());
                 NombreCancionText.setText(cancionActual.getNombre());
