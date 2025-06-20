@@ -55,9 +55,11 @@ public class JTunes {
     
     public Song searchSong(int codigo){
         for(Song cancionBusq: canciones){
+            if (cancionBusq != null){
            if(codigo==cancionBusq.getCodigo()){
                return cancionBusq;
            }
+            }
         }
         return null;
     }
